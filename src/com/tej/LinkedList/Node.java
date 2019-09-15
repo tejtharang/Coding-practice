@@ -1,6 +1,8 @@
 package com.tej.LinkedList;
 
-public class Node {
+import java.util.Comparator;
+
+public class Node implements Comparable<Node> {
     private int value;
     private Node next;
 
@@ -13,6 +15,11 @@ public class Node {
         this.value = value;
         this.next = next;
     }
+
+    public boolean equals(Node n1, Node n2){
+        return n1.getValue() == n2.getValue();
+    }
+
 
     public int getValue() {
         return value;
@@ -28,5 +35,10 @@ public class Node {
 
     public void setNext(Node next){
         this.next = next;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+        return this.value - o.getValue();
     }
 }

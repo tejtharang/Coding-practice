@@ -3,6 +3,9 @@ package com.tej.LinkedList;
 public class LinkedList {
     private Node head;
 
+    public LinkedList(){
+        this.head = null;
+    }
     public LinkedList(Node head){
         this.head = head;
     }
@@ -18,6 +21,14 @@ public class LinkedList {
             traveller = traveller.getNext();
         }
         traveller.setNext(new Node(value));
+    }
+
+    public void addNode(Node node){
+        Node traveller = this.head;
+        while(traveller.getNext() != null){
+            traveller = traveller.getNext();
+        }
+        traveller.setNext(node);
     }
 
     public Node getHead(){

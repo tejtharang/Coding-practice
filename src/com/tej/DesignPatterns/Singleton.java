@@ -17,7 +17,7 @@ package com.tej.DesignPatterns;
     - Classes that contain resources that are accessed in shared mode
  */
 
-public class Singleton {
+/*public class Singleton {
     private static Singleton instance;
     private static int value;
     private Singleton(){
@@ -39,4 +39,59 @@ public class Singleton {
     public void setValue(int v){
         value = v;
     }
+}*/
+public class Singleton{
+    private static Singleton instance;
+    private static int value;
+
+    private Singleton(){
+
+    }
+
+    public static Singleton getInstance(){
+        if(instance == null){
+            instance = new Singleton();
+            value = 1;
+        }
+
+        return instance;
+    }
+
+    public static int getValue(){
+        return value;
+    }
+
+    public static void setValue(int v){
+        value = v;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
